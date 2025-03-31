@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="container-md">
+        <h1 class="mb-4">Ingresar datos de usuario</h1>
+        <form id="userForm">
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="name">Nombre</label>
+                <input placeholder="Ingrese su nombre" class="form-control input-short" name="name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="apellido_paterno">Apellido Paterno</label>
+                <input placeholder="Ingrese su apellido paterno" class="form-control input-short" name="apellido_paterno" required>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="apellido_materno">Apellido Materno</label>
+                <input placeholder="Ingrese su apellido materno" class="form-control input-short" name="apellido_materno" required>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="rut">Rut</label>
+                <input placeholder="Ingrese su rut (sin puntos y con guión al final)" class="form-control input-short" name="rut" required>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="telefono">Número telefónico</label>
+                <input placeholder="Ingrese su número" class="form-control input-short" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="ciudad">Ciudad</label>
+                <select class="form-select input-short" name="ciudad" required>
+                    <option selected>Elija su ciudad</option>
+                    <option value="Santiago">Santiago</option>
+                    <option value="Valparaíso">Valparaíso</option>
+                    <option value="Concepción">Concepción</option>
+                    <option value="La Serena">La Serena</option>
+                    <option value="Antofagasta">Antofagasta</option>
+                    <option value="Temuco">Temuco</option>
+                    <option value="Iquique">Iquique</option>
+                    <option value="Rancagua">Rancagua</option>
+                    <option value="Talca">Talca</option>
+                    <option value="Arica">Arica</option>
+                    <option value="Puerto Montt">Puerto Montt</option>
+                    <option value="Copiapó">Copiapó</option>
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-control-plaintext m-3" for="birthday">Fecha de nacimiento</label>
+                <input type="text" name="birthday" class="form-control input-short" value="10/24/1984" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        $(function() {
+            $('input[name="birthday"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            });
+        });
+
+        $('#userForm').on('submit', function(event) {
+            event.preventDefault();
+            alert('Formulario de usuario enviado correctamente');
+            window.location.href = 'servicio.html';
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
