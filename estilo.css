@@ -1,0 +1,25 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+-md {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+label, input, select, button {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.input-short {
+    max-width: 576px;
+}
